@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col">
+        <input #termino type="text" class="form-control" (keyup)="searchArtist(termino.value)" placeholder="Buscar artista">
+    </div>
+</div>
+<ng-container *ngIf="loading; else elseTemplate">
+    <app-loading></app-loading>
+</ng-container>
+<ng-template #elseTemplate>
+    <app-tarjetas [spotifyItems]="artists"></app-tarjetas>
+</ng-template>

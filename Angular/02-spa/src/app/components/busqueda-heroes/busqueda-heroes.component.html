@@ -1,0 +1,20 @@
+<h1>
+    Resultado de Busqueda con termino <strong>{{ termino }}</strong>
+</h1>
+<hr>
+<ng-container *ngIf="resultado.length>0  else elseTemplate;">
+    <div class="card-columns">
+        <app-heroe-tarjeta [heroe]="heroe" *ngFor="let heroe of resultado">
+
+        </app-heroe-tarjeta>
+    </div>
+</ng-container>
+<ng-template #elseTemplate>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert">
+                No existen resultados con el termino <strong>{{ termino }}</strong>
+            </div>
+        </div>
+    </div>
+</ng-template>
