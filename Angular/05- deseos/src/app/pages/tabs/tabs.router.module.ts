@@ -8,33 +8,37 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'tab1',
+        path: 'pendientes',
         children: [
           {
             path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
+            loadChildren: '../pendientes/pendientes.module#PendientesPageModule'
+          },
+          {
+            path: 'agregar/:listaId',
+            loadChildren: '../agregar/agregar.module#AgregarPageModule'
           }
         ]
       },
       {
-        path: 'tab2',
+        path: 'completados',
         children: [
           {
             path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
+            loadChildren: '../completados/completados.module#CompletadosPageModule'
           }
         ]
       },
       {
         path: '',
-        redirectTo: '/tabs/tab1',
+        redirectTo: '/tabs/pendientes',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/tab1',
+    redirectTo: '/tabs/pendientes',
     pathMatch: 'full'
   }
 ];
