@@ -26,6 +26,10 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../completados/completados.module#CompletadosPageModule'
+          },
+          {
+            path: 'agregar/:listaId',
+            loadChildren: '../agregar/agregar.module#AgregarPageModule'
           }
         ]
       },
