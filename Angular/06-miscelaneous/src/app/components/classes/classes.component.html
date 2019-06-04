@@ -1,0 +1,15 @@
+<div [ngClass]="alertStyle" class="alert" role="alert">
+    A simple success alert—check it out!
+</div>
+<button class="btn" (click)="alertStyle = 'alert-success'">
+  <i class="fas fa-sliders-h"></i> success
+</button>
+<button class="btn" (click)="alertStyle = 'alert-danger'">
+  <i class="fas fa-sliders-h"></i> danger
+</button>
+<br><br>
+<h3>Proceso asincrono</h3>
+<button class="btn btn-primary" (click)="ejecutar()" type="button" [disabled]="loading">
+  <i [ngClass]="{'fa-sync fa-spin' : loading, 'fa-save' : !loading}" class="fa"></i>
+  {{ loading?'Cargando...':'Guardar Cambios' }}
+</button>
